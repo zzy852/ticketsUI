@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>下单</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="full-screen" content="yes"/>
+		<meta name="screen-orientation" content="portrait"/>
+		<meta name="x5-fullscreen" content="true"/>
+		<meta name="360-fullscreen" content="true"/>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link href="../../css/bootstrap.css" rel="stylesheet">
+		<link href="../../css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-blue" role="navigation">
+			<div class="container text-center nav-body">
+				<a href="index.html" class="pull-left">
+					<img src="../../images/back.png" class="icon-back" alt="返回">
+					<span class="font-16">
+					返回
+					</span>
+				</a>
+				<a href="#" class="text-white">
+					<span class="header-text">下单</span>
+				</a>
+				<a href="#" class="pull-right">
+					<img src="../../images/fresh.png" class="icon-fresh" alt="刷新">
+				</a>
+			</div>
+		</nav>
+		<div class="container topForm text-center">
+			<span class="col-xs-6 text-left">
+			<span class="topText font-black">T1222</span>
+			<span class="topText font-black">硬卧</span>
+			</span>
+			<span class="col-xs-6 text-right">
+				<span class="topText font-black">12月24日</span>
+				<span class="topText font-black">周一</span>
+			</span>
+		</div>
+		<div class="container content-body cityShow">
+			<div class="col-xs-12">
+				<div class="col-xs-5 cityName text-center">
+					上海
+				</div>
+				<div class="col-xs-2 cityArrowLeft text-center">
+					<div class="arrowLeftIcon">
+						<img src="../../images/arrowLeft.png">
+					</div>
+				</div>
+				<div class="col-xs-5 cityName text-center">
+					济南
+				</div>
+			</div>
+			<div class="col-xs-12 time-label">
+				<div class="col-xs-5 cityTime text-center">
+					16:03
+				</div>
+				<div class="col-xs-2 text-center">
+				</div>
+				<div class="col-xs-5 cityTime text-center">
+					01:15
+				</div>
+			</div>
+		</div>
+		<div class="container content-body orderInfo no-padding">
+			<form role="form" action="payOrder.html">
+				<ul class=" list-group orderUserList col-xs-12 no-padding">
+					<li class="list-group-item orderUserItem col-xs-12">
+						<div class="col-xs-4 no-padding padding-left-15 text-right">
+							<p class="form-control-static">添加乘客：</p>
+						</div>
+						<div class="col-xs-4 no-padding">
+							<p class="text-light-gray form-control-static">请选择一个乘客</p>
+						</div>
+						<div class="col-xs-4 no-padding padding-right-15">
+							<a class="btn btn-success btn-addUser" href="addPassenger.html"><span class="glyphicon glyphicon-plus"></span>添加乘客</a>
+						</div>
+					</li>
+					<li class="list-group-item orderUserItem col-xs-12">
+						<div class="col-xs-4 no-padding padding-left-15 text-right">
+							<p class="form-control-static">验证码：</p>
+						</div>
+						<div class="col-xs-4 no-padding">
+							<input type="text" class="form-control">
+						</div>
+						<div class="col-xs-4 no-padding padding-right-15">
+							<img src="../../images/code.png" alt="验证码" class="codeImage">
+						</div>
+					</li>
+				</ul>
+				<div class=" col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6 col-xs-12 text-center">
+					<button class="btn btn-success btn-block btn-lg" type="submit">确定购买</button>
+				</div>
+			</form>
+		</div>
+		<div class="container content-body ticketInfoTips">
+			<label class="font-red">请注意：</label>
+			<p class="tipContent">
+			卧铺上中下席位以实际出票为准，暂定下铺的价格，出票后根据实际票价退还差价
+			</p>
+		</div>
+	</body>
+	<script src="../../js/jquery-1.11.1.min.js"></script>
+	<script src="../../js/global.js"></script>
+	<script type="text/javascript">
+	$(".delete-btn").click(function(event) {
+		var me = $(this),
+		parent = me.parent();
+		console.log($(".delete-btn").index(me));
+		if ($(".delete-btn").index(me) == 0 && $(".delete-btn").length == 1) {
+			parent.html('<p class="text-light-gray form-control-static">请选择一个乘客</p>');
+		} else if ($(".delete-btn").index(me) == 0 && $(".delete-btn").length > 1) {
+			var insertDom = $($(".delete-btn")[1]).parent(),
+				insertDomParent = insertDom.parent();
+				parent.html("");
+			insertDom.children().appendTo(parent);
+			insertDomParent.remove();
+		}
+	});
+	</script>
+</html>

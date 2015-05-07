@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>订单支付</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="full-screen" content="yes"/>
+		<meta name="screen-orientation" content="portrait"/>
+		<meta name="x5-fullscreen" content="true"/>
+		<meta name="360-fullscreen" content="true"/>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link href="../../css/bootstrap.css" rel="stylesheet">
+		<link href="../../css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-blue" role="navigation">
+			<div class="container text-center nav-body">
+				<a href="index.html" class="pull-left">
+					<img src="../../images/back.png" class="icon-back" alt="返回">
+					<span class="font-16">
+					返回
+					</span>
+				</a>
+				<a href="#" class="text-white">
+					<span class="header-text">订单支付</span>
+				</a>
+				<a href="#" class="pull-right">
+					<img src="../../images/fresh.png" class="icon-fresh" alt="刷新">
+				</a>
+			</div>
+		</nav>
+		<form action ="payResult.html">
+		<div class="container content-body payTip">
+		<div class="col-xs-12 tips">
+				预定车票已<span class="h4-red">最高票价</span>收取预付款，实际费用由出票为准<span class="h4-red">多退少补</span>
+			</div>
+			</div>
+		<div class="container topForm text-center">
+			<span class="col-xs-6 text-left">
+			<span class="topText font-black">T1222</span>
+			</span>
+			<span class="col-xs-6 text-right">
+				<span class="topText font-black">12月24日</span>
+				<span class="topText font-black">周一</span>
+			</span>
+		</div>
+
+		<div class="container content-body cityShow">
+			<div class="col-xs-12">
+				<div class="col-xs-5 cityName text-center">
+					上海
+				</div>
+				<div class="col-xs-2 cityArrowLeft text-center">
+					<div class="arrowLeftIcon">
+						<img src="../../images/arrowLeft.png">
+					</div>
+				</div>
+				<div class="col-xs-5 cityName text-center">
+					济南
+				</div>
+			</div>
+			<div class="col-xs-12 time-label">
+				<div class="col-xs-5 cityTime text-center">
+					16:03
+				</div>
+				<div class="col-xs-2 text-center">
+				</div>
+				<div class="col-xs-5 cityTime text-center">
+					01:15
+				</div>
+			</div>
+		</div>
+
+		<div class="container content-body orderInfo payOrderInfo no-padding">
+			<ul class="list-group orderUserList payUserList col-xs-12 no-padding">
+				<li class="list-group-item orderUserItems col-xs-12">
+					<div class="col-xs-12 text-black orderUserItem">
+						<span class="text-left pull-left">张三</span>
+					</div>
+					<div class="col-xs-12 text-light-gray orderUserItem">
+						<span class="text-left pull-left">123456789123456789</span>
+					</div>
+				</li>
+				<li class="list-group-item orderUserItems col-xs-12">
+					<div class="col-xs-12 text-black orderUserItem">
+						<span class="text-left pull-left">火车票</span>
+						<span class="text-right pull-right font-red font-bloder">￥200.00</span>
+					</div>
+					<div class="col-xs-12 text-black orderUserItem">
+						<span class="text-left pull-left">春节旅行服务费</span>
+						<span class="text-right pull-right font-red font-bloder">￥20.00</span>
+					</div>
+					<div class="col-xs-12 text-light-gray orderUserItem userItemTips">
+						<span class="text-left pull-left font-small">本保险由太平洋保险公司提供，由三峡银行代售</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="orderBtnTem">
+		<div class="container content-body no-padding">
+			<div class="col-xs-12 no-padding orderBtns">
+				<div class="col-xs-7 text-right totalPay">
+					<span class="text-light-gray">总计：</span><span class="font-red">￥220.00</span><span class="text-light-gray">&nbsp;元</span>
+				</div>
+				<div class="col-xs-5 btnPay">
+					<button class="btn btn-danger btn-pay" type="submit">立即支付</button>
+				</div>
+			</div>
+		</div>
+		</div>
+		</form>
+	</body>
+		<script src="../../js/jquery-1.11.1.min.js"></script>
+		<script src="../../js/global.js"></script>
+</html>

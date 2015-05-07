@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>抢票首页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="full-screen" content="yes"/>
+		<meta name="screen-orientation" content="portrait"/>
+		<meta name="x5-fullscreen" content="true"/>
+		<meta name="360-fullscreen" content="true"/>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/style.css?v=1.003" rel="stylesheet">
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-blue" role="navigation">
+			<div class="container text-center nav-body">
+				<a href="#" class="pull-left" onclick="Collection()">
+					<span class="font-16 no-margin-left">
+					收藏
+					</span>
+				</a>
+				<a href="#" class="text-white indexHeaderText">
+					<span class="header-text">抢票神器</span>
+				</a>
+				<a href="#" class="pull-right">
+					<img src="images/fresh.png" class="icon-fresh" alt="刷新">
+				</a>
+			</div>
+		</nav>
+		<div class="container content-body">
+			<div class="col-xs-12 tips">
+				我们所有购票方式均高于其他同类产品<span class="h4-red">300</span>倍抢票几率
+			</div>
+			<div class="block-row col-xs-12">
+				<div class="col-xs-5-5 no-padding">
+					<a class="col-xs-12 block block-light-pink" href="pages/services/index.html?target=buy">
+						<h3>在线买票</h3>
+						<span>(火车票、汽车票)</span>
+						<span class="block-icon icon-1"></span>
+					</a>
+				</div>
+				<div class="col-xs-6-5 no-padding padding-left-10">
+					<a class="col-xs-12 block block-blue" href="pages/services/index.html?target=book">
+						<h3>预约买票</h3>
+						<span>(火车票、汽车票)</span>
+						<span class="block-icon icon-2"></span>
+					</a>
+				</div>
+			</div>
+			<div class="block-row col-xs-12">
+				<div class="col-xs-6-5 no-padding padding-right-10">
+					<a class="col-xs-12 block block-pink" href="pages/services/index.html?target=reissue">
+						<h3>先上车再补票</h3>
+						<span>(火车票)</span>
+						<span class="block-icon icon-3"></span>
+					</a>
+				</div>
+				<div class="col-xs-5-5 no-padding">
+					<a class="col-xs-12 block block-light-blue" href="pages/services/index.html?target=best">
+						<h3>推荐线路</h3>
+						<span>(火车票、汽车票)</span>
+						<span class="block-icon icon-4"></span>
+					</a>
+				</div>
+			</div>
+			<div class="block-row col-xs-12">
+				<div class="col-xs-5-5 no-padding">
+					<a class="col-xs-12 block block-green" href="pages/searchOrder/index.html">
+						<h3>查询订单</h3>
+						<span class="block-icon icon-5"></span>
+					</a>
+				</div>
+				<div class="col-xs-6-5 no-padding padding-left-10">
+					<a class="col-xs-12 block block-light-green" href="pages/FAQ/FAQ.html">
+						<h3>常见问题</h3>
+						<span class="block-icon icon-6"></span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<footer class="col-xs-12">
+			<div class="container no-padding">
+				<div class="col-xs-12 text-center bottom-info no-padding">
+					<b>本产品由以下公司联合推广</b>
+				</div>
+				<div class="col-xs-12 no-padding bottom-logos">
+					<div class="col-xs-3 no-padding logo">
+						<img src="images/hwLogo.png" alt="">
+					</div>
+					<div class="col-xs-3 no-padding logo">
+						<img src="images/sxbLogo.png" alt="">
+					</div>
+					<div class="col-xs-3 no-padding logo">
+						<img src="images/hwLogo.png" alt="">
+					</div>
+					<div class="col-xs-3 no-padding logo">
+						<img src="images/sxbLogo.png" alt="">
+					</div>
+				</div>
+				<div class="col-xs-12 text-center bottom-info no-padding">
+					<span class="font-xs">本产品仅为解决老百姓过年回家，请勿传播
+					</span>
+				</div>
+			</div>
+		</footer>
+		<div class="alert alert-danger collection-alert text-center" role="alert">
+			请使用浏览器收藏夹功能进行添加
+		</div>
+		<div class="weixinModal">
+			<img src="images/finger.png" class="finger" alt="手指"/>
+			<p class="weixinTips text-center">请点击<img src="images/more.jpg" alt="...">,选择<img src="images/collect.jpg" alt="收藏"></p>
+		</div>
+	</body>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/global.js"></script>
+		<script type="text/javascript">
+		// 加入收藏
+		function Collection() {
+			var sURL = window.location.href,
+				sTitle = "抢票神器";
+			if (!isWeiXin()) {
+				$(".weixinModal").click(function(event) {
+				$("body").removeClass('bodymodal');
+				$("html").removeClass('bodymodal');
+					$(".weixinModal").removeClass('active');
+				});
+				$("body").addClass('bodymodal');
+				$("html").addClass('bodymodal');
+				$(".weixinModal").addClass('active');
+				window.setTimeout(function() {
+				$("body").removeClass('bodymodal');
+				$("html").removeClass('bodymodal');
+					$(".weixinModal").removeClass('active');
+				}, 10000);
+				return;
+			}
+			try {
+				window.external.addFavorite(sURL, sTitle);
+			} catch (e) {
+				try {
+					window.sidebar.addPanel(sTitle, sURL, "");
+				} catch (e) {
+					$(".collection-alert").addClass('active');
+					window.setTimeout(function() {
+						$(".collection-alert").removeClass('active');
+					}, 2000);
+				}
+			}
+		}
+		</script>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>选择车次类型</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="full-screen" content="yes"/>
+		<meta name="screen-orientation" content="portrait"/>
+		<meta name="x5-fullscreen" content="true"/>
+		<meta name="360-fullscreen" content="true"/>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link href="../../css/bootstrap.css" rel="stylesheet">
+		<link href="../../css/icheck/all.css" rel="stylesheet">
+		<link href="../../css/icheck/square/green.css" rel="stylesheet">
+		<link href="../../css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-blue" role="navigation">
+			<div class="container text-center nav-body">
+				<a href="index.html" class="pull-left">
+					<img src="../../images/back.png" class="icon-back" alt="返回">
+					<span class="font-16">
+					返回
+					</span>
+				</a>
+				<a href="#" class="text-white">
+					<span class="header-text">选择车次类型</span>
+				</a>
+				<a href="#" class="pull-right">
+					<span class="font-16">
+					确定
+					</span>
+				</a>
+			</div>
+		</nav>
+		<div class="container content-body typeList">
+			<div class="col-xs-12 no-padding">
+				<ul class="list-group typeItems">
+					<a href="javascript:void(0);" class="list-group-item typeItem">
+						<input tabindex="5" type="checkbox" class="icheckbox" id="checkbox-1">
+						<label for="checkbox-1">不限类型</label>
+					</a>
+					<a href="javascript:void(0);" class="list-group-item typeItem">
+						<input tabindex="5" type="checkbox" class="icheckbox" id="checkbox-2">
+						<label for="checkbox-2">G-高铁</label>
+					</a>
+					<a href="javascript:void(0);" class="list-group-item typeItem">
+						<input tabindex="5" type="checkbox" class="icheckbox" id="checkbox-3">
+						<label for="checkbox-3">D-动车</label>
+					</a>
+				</ul>
+			</div>
+		</div>
+	</body>
+		<script src="../../js/jquery-1.11.1.min.js"></script>
+		<script src="../../js/icheck.min.js"></script>
+		<script src="../../js/global.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			$(".icheckbox:eq(0)").iCheck({
+				checkboxClass: 'icheckbox_square-green',
+				radioClass: 'iradio_square-green',
+				increaseArea: '20%' // optional
+			});
+			$(".icheckbox:gt(0)").iCheck({
+				checkboxClass: 'icheckbox_square-green',
+				radioClass: 'iradio_square-green',
+				increaseArea: '20%' // optional
+			});
+			$(".icheckbox:eq(0)").on('ifChecked', function(event){
+				var me = $(this);
+				($(".icheckbox:gt(0)")).iCheck('uncheck');
+			});
+			$(".icheckbox:gt(0)").on('ifChecked', function(event){
+				var me = $(this);
+				($(".icheckbox:eq(0)")).iCheck('uncheck');
+			});
+		});
+		$(".typeItems .typeItem").click(function(event) {
+			var me = $(this);
+			var checkbox = me.find('input[type=checkbox]');
+			checkbox.iCheck('toggle');
+		});
+		</script>
+</html>

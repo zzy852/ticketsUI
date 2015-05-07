@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>先上车后补票</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="full-screen" content="yes"/>
+		<meta name="screen-orientation" content="portrait"/>
+		<meta name="x5-fullscreen" content="true"/>
+		<meta name="360-fullscreen" content="true"/>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link href="../../css/bootstrap.css" rel="stylesheet">
+		<link href="../../css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-blue" role="navigation">
+			<div class="container text-center nav-body">
+				<a href="../../index.html" class="pull-left">
+					<img src="../../images/back.png" class="icon-back" alt="返回">
+					<span class="font-16">
+					返回
+					</span>
+				</a>
+				<a href="#" class="text-white">
+					<span class="header-text">先上车后补票</span>
+				</a>
+				<a href="#" class="pull-right">
+					<img src="../../images/fresh.png" class="icon-fresh" alt="刷新">
+				</a>
+			</div>
+		</nav>
+		<div class="container content-body">
+			<p class="font-black text-center">
+				<span class="icon-noTicket"></span>
+				没票了？
+			</p>
+			<p class="text-center">
+				你可以试试买到中途的票后面再补票
+			</p>
+		</div>
+
+		<div class="container content-body cityForm">
+			<div class="col-xs-12 city-label">
+				<div class="col-xs-5 text-center">
+					出发城市
+				</div>
+				<div class="col-xs-2">
+				</div>
+				<div class="col-xs-5 text-center">
+					到达城市
+				</div>
+			</div>
+			<div class="col-xs-12 city-selects">
+				<a class="col-xs-5 citySelect cityStart text-center" href="selectCity.html">
+					上海
+				</a>
+				<div class="col-xs-2 col-xs-offset-5 cityArrow text-center">
+					<a href="javascript:void(0);" class="arrowIcon">
+						<img src="../../images/change.png">
+					</a>
+				</div>
+				<a class="col-xs-5 citySelect cityEnd text-center" href="selectCity.html">
+					济南
+				</a>
+			</div>
+		</div>
+		<div class="container ticketForm">
+			<div class="col-xs-12 no-padding">
+				<ul class="list-group">
+					<a href="selectDate.html" class="list-group-item ticketItem">出发时间：<span id="startDate">12月24日（星期三）</span><span class="icon-move"></span>
+					</a>
+					<a href="selectTrainIndex.html" class="list-group-item ticketItem">指定车次：<span id="trainIndex">不限<span class="icon-move"></span></a>
+				</ul>
+			</div>
+		</div>
+		<div class="container no-padding">
+		<div class=" col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6 col-xs-12 text-center">
+			<form action="searchResult.html" id="submitForm">
+				<input type="hidden" value="" name="startcity">
+				<input type="hidden" value="" name="endcity">
+				<input type="hidden" value="" name="date">
+				<input type="hidden" value="" name="trainindex">
+			<button class="btn btn-success btn-block btn-lg" type="submit">搜索中间站余票</button>
+			</form>
+		</div>
+		</div>
+		<div class="container content-body ticketInfoTips">
+			<label class="font-red">请注意：</label>
+			<p class="tipContent">
+				买中途票上车不是无票上车噢:)
+			</p>
+			<p class="tipContent">
+				上车后请找列车员补票噢:)
+			</p>
+			<p class="tipContent">
+				补票通常只有站票，无座位噢:)
+			</p>
+		</div>
+	</body>
+		<script src="../../js/jquery-1.11.1.min.js"></script>
+		<script src="../../js/global.js"></script>
+		<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".cityArrow").click(function(event) {
+				var me = $(this),
+					prevDom = me.prev("a.citySelect"),
+					nextDom = me.next("a.citySelect"),
+					prevPos = prevDom.position(),
+					nextPos = nextDom.position();
+				var cityBuff = $("#submitForm input[name=startcity]").val();
+				$("#submitForm input[name=startcity]").val($("#submitForm input[name=startcity]").val());
+				$("#submitForm input[name=startcity]").val(cityBuff);
+
+				prevDom.animate({
+						top: nextPos.top,
+						left: nextPos.left
+					},
+					200,
+					function() {});
+				nextDom.animate({
+						top: prevPos.top,
+						left: prevPos.left
+					},
+					200,
+					function() {
+					});
+			});
+			$(".tab-btn").click(function(event) {
+				var me = $(this),
+				target = $("#" + me.data("target"));
+				if (me.hasClass('active')) {
+					return;
+				}
+				else{
+					$(".tab-btn").removeClass('active');
+					me.addClass('active');
+					$(".tabs").removeClass('active');
+					target.addClass('active');
+				}
+			});
+		});
+		</script>
+</html>

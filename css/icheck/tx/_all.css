@@ -1,0 +1,49 @@
+/* iCheck plugin tx skin
+----------------------------------- */
+.icheckbox_tx,
+.iradio_tx {
+    display: inline-block;
+    *display: inline;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    width: 22px;
+    height: 22px;
+    background: url(tx.png) no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.icheckbox_tx {
+    background-position: 0 0;
+}
+    .icheckbox_tx.hover {
+        background-position: -24px 0;
+    }
+    .icheckbox_tx.checked {
+        background-position: -48px 0;
+    }
+    .icheckbox_tx.disabled {
+        background-position: -72px 0;
+        cursor: default;
+    }
+    .icheckbox_tx.checked.disabled {
+        background-position: -96px 0;
+    }
+
+.iradio_tx {
+    background-position: -120px 0;
+}
+    .iradio_tx.hover {
+        background-position: -144px 0;
+    }
+    .iradio_tx.checked {
+        background-position: -168px 0;
+    }
+    .iradio_tx.disabled {
+        background-position: -192px 0;
+        cursor: default;
+    }
+    .iradio_tx.checked.disabled {
+        background-position: -216px 0;
+    }

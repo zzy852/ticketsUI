@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>注册</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="full-screen" content="yes"/>
+		<meta name="screen-orientation" content="portrait"/>
+		<meta name="x5-fullscreen" content="true"/>
+		<meta name="360-fullscreen" content="true"/>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link href="../../css/bootstrap.css" rel="stylesheet">
+		<link href="../../css/style.css" rel="stylesheet">
+	</head>
+	<body style="background:#fff;">
+		<nav class="navbar navbar-default navbar-blue" role="navigation">
+			<div class="container text-center nav-body">
+				<a href="../../index.html" class="pull-left">
+					<img src="../../images/back.png" class="icon-back" alt="返回">
+					<span class="font-16">
+					返回
+					</span>
+				</a>
+				<a href="#" class="text-white">
+					<span class="header-text">注册</span>
+				</a>
+			</div>
+		</nav>
+		<div class="container content-body">
+				<form class="form-regist" role="form">
+					<input type="text" class="form-control first" placeholder="请输入真实姓名" required="" autofocus="">
+					<input type="text" class="form-control" placeholder="请输入手机号码" required="">
+					<input type="text" class="form-control" placeholder="请输入身份证号码" required="">
+					<div class="col-xs-8 no-padding">
+							<input type="text" placeholder="请输入短信验证码" class="form-control">
+						</div>
+						<div class="col-xs-4 no-padding text-center padding-left-10">
+							<button class="btn btn-info btn-getCode" type="button">获取验证码</button>
+						</div>
+					<input type="password" class="form-control" placeholder="请输入登录密码" required="">
+					<input type="password" class="form-control" placeholder="请再次输入登录密码" required="">
+					<button class="btn btn-lg btn-success btn-block" type="submit">提交</button>
+				</form>
+			</div>
+	</body>
+		<script src="../../js/jquery-1.11.1.min.js"></script>
+		<script src="../../js/global.js"></script>
+</html>

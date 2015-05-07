@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>预约买票</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="full-screen" content="yes"/>
+		<meta name="screen-orientation" content="portrait"/>
+		<meta name="x5-fullscreen" content="true"/>
+		<meta name="360-fullscreen" content="true"/>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link href="../../css/bootstrap.css" rel="stylesheet">
+		<link href="../../css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-blue" role="navigation">
+			<div class="container text-center nav-body">
+				<a href="../../index.html" class="pull-left">
+					<img src="../../images/back.png" class="icon-back" alt="返回">
+					<span class="font-16">
+					返回
+					</span>
+				</a>
+				<a href="#" class="text-white">
+					<span class="header-text">预约买票</span>
+				</a>
+				<a href="#" class="pull-right">
+					<img src="../../images/fresh.png" class="icon-fresh" alt="刷新">
+				</a>
+			</div>
+		</nav>
+		<div class="container col-xs-12 tabType">
+			<div class="col-lg-offset-4 col-lg-4 col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 col-xs-offset-1 col-xs-10 text-center">
+				<div class="btn-group">
+					<button type="button" data-target="trian" class="btn btn-default col-xs-6 active tab-btn">火车票</button>
+					<button type="button" data-target="car" class="btn btn-default col-xs-6 tab-btn">汽车票</button>
+				</div>
+			</div>
+		</div>
+		<div class="tabs active" id="trian">
+		<div class="container content-body cityForm">
+			<div class="col-xs-12 city-label">
+				<div class="col-xs-5 text-center">
+					出发城市
+				</div>
+				<div class="col-xs-2">
+				</div>
+				<div class="col-xs-5 text-center">
+					到达城市
+				</div>
+			</div>
+			<div class="col-xs-12 city-selects">
+				<a class="col-xs-5 citySelect cityStart text-center" href="selectCity.html">
+					上海
+				</a>
+				<div class="col-xs-2 col-xs-offset-5 cityArrow text-center">
+					<a href="javascript:void(0);" class="arrowIcon">
+						<img src="../../images/change.png">
+					</a>
+				</div>
+				<a class="col-xs-5 citySelect cityEnd text-center" href="selectCity.html">
+					济南
+				</a>
+			</div>
+		</div>
+		<div class="container ticketForm">
+			<div class="col-xs-12 no-padding">
+				<ul class="list-group">
+					<a href="selectDate.html" class="list-group-item ticketItem">出发时间：<span id="startDate">12月24日-26日</span><span class="icon-move"></span>
+					</a>
+
+					<a href="selectTime.html" class="list-group-item ticketItem">出发时段：<span id="startDate">00:00~24:00</span><span class="icon-move"></span>
+					</a>
+
+					<a href="selectTrainType.html" class="list-group-item ticketItem">车次类型：<span id="trainType">不限<span class="icon-move"></span></a>
+
+					<a href="selectTrainIndex.html" class="list-group-item ticketItem">指定车次：<span id="trainIndex">不限<span class="icon-move"></span></a>
+
+					<a href="selectSeatType.html" class="list-group-item ticketItem">坐席类型：<span id="seatType">不限<span class="icon-move"></span></a>
+				</ul>
+			</div>
+		</div>
+		<div class=" col-lg-offset-5 col-lg-2 col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6 col-xs-12 text-center">
+			<form action="searchResult.html" id="submitForm">
+				<input type="hidden" value="" name="startcity">
+				<input type="hidden" value="" name="endcity">
+				<input type="hidden" value="" name="date">
+				<input type="hidden" value="" name="time">
+				<input type="hidden" value="" name="traintype">
+				<input type="hidden" value="" name="trainindex">
+				<input type="hidden" value="" name="seattype">
+			<button class="btn btn-success btn-block btn-lg" type="submit">开始预约抢票</button>
+			</form>
+		</div>
+		</div>
+		<div class="tabs" id="car">
+		<div class="container content-body cityForm">
+			<div class="col-xs-12 city-label">
+				<div class="col-xs-5 text-center">
+					出发城市
+				</div>
+				<div class="col-xs-2">
+				</div>
+				<div class="col-xs-5 text-center">
+					到达城市
+				</div>
+			</div>
+			<div class="col-xs-12 city-selects">
+				<a class="col-xs-5 citySelect cityStart text-center" href="selectCity.html">
+					上海
+				</a>
+				<div class="col-xs-2 col-xs-offset-5 cityArrow text-center">
+					<a href="javascript:void(0);" class="arrowIcon">
+						<img src="../../images/change.png">
+					</a>
+				</div>
+				<a class="col-xs-5 citySelect cityEnd text-center" href="selectCity.html">
+					济南
+				</a>
+			</div>
+		</div>
+		<div class="container ticketForm">
+			<div class="col-xs-12 no-padding">
+				<ul class="list-group">
+					<a href="javascript:void(0);" class="list-group-item ticketItem" data-toggle="modal" data-target="#dateModal">出发时间：<span id="startDate">12月24日-26日</span><span class="glyphicon glyphicon-chevron-right pull-right"></span>
+					</a>
+				</ul>
+			</div>
+		</div>
+		<div class=" col-lg-offset-5 col-lg-2 col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6 col-xs-12 text-center">
+			<form action="searchResult.html" id="submitForm">
+				<input type="hidden" value="" name="startcity">
+				<input type="hidden" value="" name="endcity">
+				<input type="hidden" value="" name="date">
+			<button class="btn btn-success btn-block btn-lg" type="submit">查询</button>
+			</form>
+		</div>
+		</div>
+		<script src="../../js/jquery-1.11.1.min.js"></script>
+		<script src="../../js/global.js"></script>
+		<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".cityArrow").click(function(event) {
+				var me = $(this),
+					prevDom = me.prev("a.citySelect"),
+					nextDom = me.next("a.citySelect"),
+					prevPos = prevDom.position(),
+					nextPos = nextDom.position();
+				var cityBuff = $("#submitForm input[name=startcity]").val();
+				$("#submitForm input[name=startcity]").val($("#submitForm input[name=startcity]").val());
+				$("#submitForm input[name=startcity]").val(cityBuff);
+
+				prevDom.animate({
+						top: nextPos.top,
+						left: nextPos.left
+					},
+					200,
+					function() {});
+				nextDom.animate({
+						top: prevPos.top,
+						left: prevPos.left
+					},
+					200,
+					function() {
+					});
+			});
+			$(".tab-btn").click(function(event) {
+				var me = $(this),
+				target = $("#" + me.data("target"));
+				if (me.hasClass('active')) {
+					return;
+				}
+				else{
+					$(".tab-btn").removeClass('active');
+					me.addClass('active');
+					$(".tabs").removeClass('active');
+					target.addClass('active');
+				}
+			});
+		});
+		var selectDate = function(link) {
+			var me = $(link),
+				date = me.data("date"),
+				text = me.data("text");
+			$("#startDate").text(text);
+			$("#submitForm input[name=date]").val(date);
+			$("#dateModal").modal("toggle");
+		}
+		</script>
+	</body>
+</html>
